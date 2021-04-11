@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} 
+{% block body %}
+<div class="jumbotron text-center">
+	<img class="card-img-top" src="{{url_for('static',filename='images/'+product.url_pic)}}" alt="Card image cap" />
+    <h1>name : {{product.name}}</h1>
+    <h1>price : {{product.price}}</h1>
+    <h1>details : {{product_specific.specific}}</h1>
+	<form action="{{url_for('addOrder')}}" method="POST">
+		<input type="hidden" name="product-id" value="{{product.id}}">
+		<button type="submit">Add to Order</button>
+	</form>
+	
+</div>
+
+
+
+{% endblock %}
